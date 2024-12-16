@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class CentroSportivo{
     private HashMap<String, Socio> soci;
     private HashMap<String, Istruttore> istruttori;
@@ -7,10 +9,57 @@ public class CentroSportivo{
         istruttori=new HashMap<>();
     }
     public boolean aggiungiSocio(String nome, String cognome, String cs){
-            
-        if(
+        
+        if(!soci.containsKey(cs)){
+            Socio s = new Socio(nome, cognome, cs);    
+        soci.put(cs,s);
+        return true;
+        }
+        return false;
 
-        )
     }
-    
+    public boolean rimuoviSocio(String cs){
+        
+        if(soci.containsKey(cs)){
+            soci.remove(cs);
+        return true;
+        }
+        return false;
+
+    }
+    public Socio getSocio(String cs){
+        if(soci.containsKey(cs)){
+            return soci.get(cs);
+        }
+            
+        return null;
+    }
+
+
+    public boolean aggiungiIstruttore(String nome, String cognome, String ci){
+        
+        if(!istruttori.containsKey(ci)){
+            Istruttore i = new Istruttore(nome, cognome, ci);    
+        istruttori.put(ci,i);
+        return true;
+        }
+        return false;
+
+    }
+    public boolean rimuoviIstruttore(String ci){
+        
+        if(istruttori.containsKey(ci)){
+            istruttori.remove(ci);
+        return true;
+        }
+        return false;
+
+    }
+    public Istruttore getIstruttore(String ci){
+        if(istruttori.containsKey(ci)){
+            return istruttori.get(ci);
+        }
+            
+        return null;
+    }
 }
