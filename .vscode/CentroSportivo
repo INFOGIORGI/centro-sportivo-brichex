@@ -1,0 +1,16 @@
+public class CentroSportivo{
+    private HashMap<String, Socio> soci;
+    private HashMap<String, Istruttore> istruttori;
+
+    public CentroSportivo(){
+        soci=new HashMap<>();
+        istruttori=new HashMap<>();
+    }
+    public boolean aggiungiSocio(String nome, String cognome, String cs){
+            
+        if(
+
+        )
+    }
+    
+}
